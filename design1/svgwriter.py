@@ -21,6 +21,13 @@ class SVGElementsList:
         """ % (left, top, width, height))
         return self
 
+    def path(self, d):
+        self.ins.append("""
+            <path d="%s"
+            stroke="blue" stroke-width="1" fill="none"/>
+        """ % d)
+        return self
+
     def rect_center_wh(self, center, width, height):
         left = center[0] - width/2.0
         top = center[1] - height/2.0
